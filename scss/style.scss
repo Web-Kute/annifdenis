@@ -1,0 +1,225 @@
+$colors: (
+  "belizehole": #16a085,
+  "greensea": #16a085,
+  "pumpkin": #d35400,
+  "white": #ecf0f1,
+  "turquoise": #1abc9c,
+);
+
+$breakpoints: (
+  mobile-only: 599px,
+  tablet-portrait-up: 600px,
+  tablet-portrait-down: 899px,
+  tablet-landscape-up: 900px,
+  tablet-landscape-down: 1199px,
+  desktop-up: 1200px,
+  desktop-down: 1799px,
+  big-desktop-up: 1800px,
+);
+
+@mixin mobile-only {
+  @media (max-width: map-get($breakpoints, "mobile-only")) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait-up {
+  @media (min-width: map-get($breakpoints, "tablet-portrait-up")) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait-only {
+  @media (min-width: map-get($breakpoints, "tablet-portrait-up")) and (max-width: map-get($breakpoints, "tablet-portrait-down")) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: map-get($breakpoints, "desktop-up")) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape-only {
+  @media (min-width: map-get($breakpoints, "tablet-landscape-up")) and (max-width: map-get($breakpoints, "tablet-landscape-down")) {
+    @content;
+  }
+}
+
+body {
+  background-image: url("https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2131x1600/f37eddb510de1c5b80e95354ee8d63dd/photo-1581945495314-2acec0994197.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: "Playfair Display", serif;
+  background-color: map-get($colors, "belizehole");
+}
+
+// Reset original HTML button
+button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+p {
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: map-get($colors, "greensea");
+  &:hover {
+    color: map-get($colors, "pumpkin");
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.birth-title {
+  display: flex;
+  justify-content: center;
+  @include mobile-only() {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.birthday {
+  font-size: clamp(1.5rem, 1.0652rem + 1.3913vw, 3.5rem);
+  color: map-get($colors, "white");
+  text-shadow: 1px 1px 1px map-get($colors, "greensea");
+  padding: 0 2rem;
+  border-radius: 10px;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 1rem;
+  //   overflow: auto;
+  //   overflow-y: hidden; /* Hide vertical scrollbar */
+  //   overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+#display-countdown {
+  width: 50%;
+  margin: 0 auto;
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2rem;
+  background-color: map-get($colors, "greensea");
+  text-align: center;
+  line-height: 35px;
+  font-size: clamp(2rem, calc(1.3793rem + 2.7586vw), 5rem);
+  color: map-get($colors, "white");
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 1px map-get($colors, "belizehole");
+  @include desktop-up {
+    line-height: 100px;
+  }
+  @include tablet-portrait-only() {
+    top: 50%;
+  }
+}
+
+nav {
+  margin-top: 2rem;
+}
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  width: 80%;
+  @include mobile-only() {
+    width: 98%;
+    margin: 5% auto;
+  }
+  @include tablet-portrait-up() {
+    padding: 3%;
+  }
+}
+
+.infos {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+nav {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  .icon {
+    position: relative;
+    background-color: map-get($colors, "white");
+    width: 70px;
+    height: 70px;
+    border-radius: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include mobile-only {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+  i {
+    color: map-get($colors, "greensea");
+    font-size: 1.5rem;
+    &:hover,
+    &.active {
+      color: map-get($colors, "pumpkin");
+    }
+  }
+}
+
+.content {
+  position: absolute;
+  width: 90%;
+  min-height: 400px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 5%;
+  margin-bottom: 20px;
+  h2 {
+    font-size: 2rem;
+    color: map-get($colors, "pumpkin");
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.hide {
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.show {
+  visibility: visible;
+}

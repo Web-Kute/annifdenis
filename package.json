@@ -1,0 +1,14 @@
+{
+  "name": "annif",
+  "version": "1.0.0",
+  "description": "try my best",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
