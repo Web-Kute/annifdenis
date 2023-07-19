@@ -7,6 +7,11 @@ body {
   background-color: #16a085;
 }
 
+img {
+  width: 100%;
+  max-width: 650px;
+}
+
 button {
   appearance: none;
   -moz-appearance: none;
@@ -27,7 +32,7 @@ a {
   color: #16a085;
 }
 a:hover {
-  color: #d35400;
+  color: #c0392b;
 }
 
 header {
@@ -147,9 +152,10 @@ nav .icon {
 nav i {
   color: #16a085;
   font-size: 1.5rem;
+  transition-duration: 300ms;
 }
 nav i:hover, nav i.active {
-  color: #d35400;
+  color: #c0392b;
 }
 
 .content {
@@ -163,7 +169,7 @@ nav i:hover, nav i.active {
 }
 .content h2 {
   font-size: 2rem;
-  color: #d35400;
+  color: #c0392b;
   margin-top: 0;
   margin-bottom: 2rem;
 }
@@ -185,8 +191,10 @@ nav i:hover, nav i.active {
     float: none;
     transform: scale(0.8);
   }
-  .content picture img {
-    max-width: 310px;
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .content picture {
+    float: none;
   }
 }
 

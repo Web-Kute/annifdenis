@@ -1,7 +1,7 @@
 $colors: (
   "belizehole": #16a085,
   "greensea": #16a085,
-  "pumpkin": #d35400,
+  "pomegranate": #c0392b,
   "white": #ecf0f1,
   "turquoise": #1abc9c,
 );
@@ -56,6 +56,10 @@ body {
   background-color: map-get($colors, "belizehole");
 }
 
+img{
+    width: 100%;
+    max-width: 650px;
+}
 // Reset original HTML button
 button {
   appearance: none;
@@ -76,7 +80,7 @@ p {
 a {
   color: map-get($colors, "greensea");
   &:hover {
-    color: map-get($colors, "pumpkin");
+    color: map-get($colors, "pomegranate");
   }
 }
 
@@ -186,9 +190,10 @@ nav {
   i {
     color: map-get($colors, "greensea");
     font-size: 1.5rem;
+    transition-duration: 300ms;
     &:hover,
     &.active {
-      color: map-get($colors, "pumpkin");
+      color: map-get($colors, "pomegranate");
     }
   }
 }
@@ -203,27 +208,27 @@ nav {
   margin-bottom: 20px;
   h2 {
     font-size: 2rem;
-    color: map-get($colors, "pumpkin");
+    color: map-get($colors, "pomegranate");
     margin-top: 0;
     margin-bottom: 2rem;
-    @include mobile-only(){
-        margin-bottom: 0;
+    @include mobile-only() {
+      margin-bottom: 0;
     }
   }
   picture {
     float: left;
     margin-right: 1rem;
-    img{
-        border-radius: 5px;
+    img {
+      border-radius: 5px;
     }
 
     @include mobile-only() {
-      img {
-        max-width: 310px;
-      }
       text-align: center;
       float: none;
       transform: scale(0.8);
+    }
+    @include tablet-portrait-only() {
+      float: none;
     }
   }
 }

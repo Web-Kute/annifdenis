@@ -7,6 +7,7 @@ let countDownDate = new Date("nov 3, 2023 12:00:00").getTime();
 
 const contentText = document.querySelectorAll(".content");
 const iconBtn = document.querySelectorAll(".icon");
+const picture = document.querySelector(".info-pic");
 
 const delay = setInterval(() => {
   let now = new Date().getTime();
@@ -53,10 +54,11 @@ function showInfos(e) {
       const select = document.querySelector("." + btnIcon + "");
       select.classList.toggle("hide");
       document.addEventListener("click", (e) => {
-        if (e.target !== select && e.target !== icon) {
+        if (e.target !== select && e.target !== icon && e.target !== picture) {
           select.classList.add("hide");
           icon.classList.remove("active");
         }
+        e.stopPropagation()
       });
     });
   });
