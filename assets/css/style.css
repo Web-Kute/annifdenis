@@ -167,12 +167,17 @@ nav i:hover, nav i.active {
   margin-top: 0;
   margin-bottom: 2rem;
 }
+@media (max-width: 599px) {
+  .content h2 {
+    margin-bottom: 0;
+  }
+}
 .content picture {
   float: left;
   margin-right: 1rem;
 }
 .content picture img {
-  border-radius: 10px;
+  border-radius: 5px;
 }
 @media (max-width: 599px) {
   .content picture {
