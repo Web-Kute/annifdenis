@@ -171,6 +171,9 @@ nav i:hover, nav i.active {
   float: left;
   margin-right: 1rem;
 }
+.content picture img {
+  border-radius: 10px;
+}
 @media (max-width: 599px) {
   .content picture {
     text-align: center;

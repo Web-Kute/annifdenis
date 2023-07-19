@@ -210,6 +210,9 @@ nav {
   picture {
     float: left;
     margin-right: 1rem;
+    img{
+        border-radius: 10px;
+    }
 
     @include mobile-only() {
       img {
