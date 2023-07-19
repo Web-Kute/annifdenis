@@ -207,6 +207,19 @@ nav {
     margin-top: 0;
     margin-bottom: 2rem;
   }
+  picture {
+    float: left;
+    margin-right: 1rem;
+
+    @include mobile-only() {
+      img {
+        max-width: 310px;
+      }
+      text-align: center;
+      float: none;
+      transform: scale(0.8);
+    }
+  }
 }
 
 .hide {
@@ -222,4 +235,10 @@ nav {
 
 .show {
   visibility: visible;
+}
+
+.fa-quote-left {
+  font-size: 2rem;
+  color: map-get($map: $colors, $key: "greensea");
+  margin-right: 10px;
 }

@@ -167,6 +167,20 @@ nav i:hover, nav i.active {
   margin-top: 0;
   margin-bottom: 2rem;
 }
+.content picture {
+  float: left;
+  margin-right: 1rem;
+}
+@media (max-width: 599px) {
+  .content picture {
+    text-align: center;
+    float: none;
+    transform: scale(0.8);
+  }
+  .content picture img {
+    max-width: 310px;
+  }
+}
 
 .hide {
   visibility: hidden;
@@ -181,4 +195,10 @@ nav i:hover, nav i.active {
 
 .show {
   visibility: visible;
+}
+
+.fa-quote-left {
+  font-size: 2rem;
+  color: #16a085;
+  margin-right: 10px;
 }/*# sourceMappingURL=style.css.map */
