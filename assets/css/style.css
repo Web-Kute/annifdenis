@@ -185,14 +185,7 @@ nav i:hover, nav i.active {
 .content picture img {
   border-radius: 5px;
 }
-@media (max-width: 599px) {
-  .content picture {
-    text-align: center;
-    float: none;
-    transform: scale(0.8);
-  }
-}
-@media (min-width: 600px) and (max-width: 899px) {
+@media (max-width: 899px) {
   .content picture {
     float: none;
   }

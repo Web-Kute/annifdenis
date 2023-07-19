@@ -23,6 +23,12 @@ $breakpoints: (
   }
 }
 
+@mixin tablet-portrait-down {
+  @media (max-width: map-get($breakpoints, "tablet-portrait-down")) {
+    @content;
+  }
+}
+
 @mixin tablet-portrait-up {
   @media (min-width: map-get($breakpoints, "tablet-portrait-up")) {
     @content;
@@ -56,9 +62,9 @@ body {
   background-color: map-get($colors, "belizehole");
 }
 
-img{
-    width: 100%;
-    max-width: 650px;
+img {
+  width: 100%;
+  max-width: 650px;
 }
 // Reset original HTML button
 button {
@@ -221,13 +227,7 @@ nav {
     img {
       border-radius: 5px;
     }
-
-    @include mobile-only() {
-      text-align: center;
-      float: none;
-      transform: scale(0.8);
-    }
-    @include tablet-portrait-only() {
+    @include tablet-portrait-down() {
       float: none;
     }
   }
