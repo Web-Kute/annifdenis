@@ -2,8 +2,9 @@ $colors: (
   "belizehole": #16a085,
   "greensea": #16a085,
   "pomegranate": #c0392b,
-  "white": #ecf0f1,
+  "clouds": #ecf0f1,
   "turquoise": #1abc9c,
+  "white": #ffffff,
 );
 
 $breakpoints: (
@@ -54,7 +55,7 @@ $breakpoints: (
 }
 
 body {
-  background-image: url("../img/bg-belle-ile.jpg");
+  background-image: url("../img/bg-belle-ile.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -107,7 +108,7 @@ header {
 
 .birthday {
   font-size: clamp(1.5rem, 1.0652rem + 1.3913vw, 3.5rem);
-  color: map-get($colors, "white");
+  color: map-get($colors, "clouds");
   text-shadow: 1px 1px 1px map-get($colors, "greensea");
   padding: 0 2rem;
   border-radius: 10px;
@@ -179,7 +180,7 @@ nav {
   justify-content: space-around;
   .icon {
     position: relative;
-    background-color: map-get($colors, "white");
+    background-color: map-get($colors, "clouds");
     width: 70px;
     height: 70px;
     border-radius: 70%;

@@ -1,5 +1,5 @@
 body {
-  background-image: url("../img/bg-belle-ile.jpg");
+  background-image: url("../img/bg-belle-ile.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -81,7 +81,7 @@ main {
   text-align: center;
   line-height: 35px;
   font-size: clamp(2rem, 1.3793rem + 2.7586vw, 5rem);
-  color: #ecf0f1;
+  color: #ffffff;
   border-radius: 10px;
   margin-bottom: 1rem;
   text-shadow: 1px 1px 1px #16a085;
