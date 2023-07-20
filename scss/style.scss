@@ -91,6 +91,20 @@ a {
   }
 }
 
+h2 {
+  font-size: 2rem;
+  color: map-get($colors, "pomegranate");
+  margin-top: 0;
+  margin-bottom: 2rem;
+  @include mobile-only() {
+    margin-bottom: 0;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -208,20 +222,11 @@ nav {
 .content {
   position: absolute;
   width: 90%;
-  min-height: 400px;
+  min-height: 500px;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 5%;
   margin-bottom: 20px;
-  h2 {
-    font-size: 2rem;
-    color: map-get($colors, "pomegranate");
-    margin-top: 0;
-    margin-bottom: 2rem;
-    @include mobile-only() {
-      margin-bottom: 0;
-    }
-  }
   picture {
     float: left;
     margin-right: 1rem;
