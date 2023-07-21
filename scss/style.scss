@@ -1,3 +1,23 @@
+/* Playfair Display */
+@font-face {
+  font-family: "PlayfairDisplay-Bold";
+  src: url("../fonts/playfair-display/PlayfairDisplay-Bold.otf")
+    format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "PlayfairDisplay-Italic";
+  src: url("../fonts/playfair-display/PlayfairDisplay-Italic.otf")
+    format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "PlayfairDisplay-Regular";
+  src: url("../fonts/playfair-display/PlayfairDisplay-Regular.otf")
+    format("opentype");
+  font-display: swap;
+}
+
 $colors: (
   "belizehole": #16a085,
   "greensea": #16a085,
@@ -59,7 +79,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  font-family: "Playfair Display", serif;
+  font-family: "PlayfairDisplay-Regular", serif;
   background-color: map-get($colors, "belizehole");
 }
 
@@ -157,9 +177,10 @@ main {
   margin-bottom: 1rem;
   text-shadow: 1px 1px 1px map-get($colors, "belizehole");
   @include desktop-up {
-    line-height: 100px;
+    line-height: 80px;
   }
   @include tablet-portrait-only() {
+    line-height: 50px;
     top: 50%;
   }
 }

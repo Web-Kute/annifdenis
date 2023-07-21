@@ -1,9 +1,25 @@
+/* Playfair Display */
+@font-face {
+  font-family: "PlayfairDisplay-Bold";
+  src: url("../fonts/playfair-display/PlayfairDisplay-Bold.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "PlayfairDisplay-Italic";
+  src: url("../fonts/playfair-display/PlayfairDisplay-Italic.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "PlayfairDisplay-Regular";
+  src: url("../fonts/playfair-display/PlayfairDisplay-Regular.otf") format("opentype");
+  font-display: swap;
+}
 body {
   background-image: url("../img/bg-belle-ile.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  font-family: "Playfair Display", serif;
+  font-family: "PlayfairDisplay-Regular", serif;
   background-color: #16a085;
 }
 
@@ -104,11 +120,12 @@ main {
 }
 @media (min-width: 1200px) {
   #display-countdown {
-    line-height: 100px;
+    line-height: 80px;
   }
 }
 @media (min-width: 600px) and (max-width: 899px) {
   #display-countdown {
+    line-height: 50px;
     top: 50%;
   }
 }

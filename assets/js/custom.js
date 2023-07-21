@@ -3,7 +3,7 @@ const displayDays = document.querySelector(".days");
 const displayHours = document.querySelector(".hours");
 const displayMinutes = document.querySelector(".minutes");
 // set birthday date
-let countDownDate = new Date("nov 3, 2023 12:00:00").getTime();
+let countDownDate = new Date("nov 4, 2023 23:59:00").getTime();
 
 const contentText = document.querySelectorAll(".content");
 const iconBtn = document.querySelectorAll(".icon");
@@ -23,7 +23,8 @@ const delay = setInterval(() => {
   // Format date
   const d = days === 0 || days === 1 ? `${days} jour` : `${days} jours`;
   const h = hours === 0 || hours === 1 ? `${hours} heure` : `${hours} heures`;
-  const m = minutes === 1 ? `${minutes} minute` : `${minutes} minutes`;
+  const m =
+    minutes === 0 || minutes === 1 ? `${minutes} minute` : `${minutes} minutes`;
 
   displayDays.innerHTML = `${d}`;
   displayHours.innerHTML = `${h}`;
@@ -39,7 +40,6 @@ function showInfos(e) {
   iconBtn.forEach((icon) => {
     icon.addEventListener("click", (e) => {
       let current = document.querySelector(".active");
-      // classBlock = e.target.getAttribute("class").slice(11);
       const btnIcon = e.target.dataset.icon;
       const notSelect = document.querySelectorAll(
         ".content:not(." + btnIcon + ")"
@@ -58,7 +58,7 @@ function showInfos(e) {
           select.classList.add("hide");
           icon.classList.remove("active");
         }
-        e.stopPropagation()
+        e.stopPropagation();
       });
     });
   });
