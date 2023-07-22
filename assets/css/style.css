@@ -56,6 +56,11 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, -1.7338rem + 8.6379vw, 3.125rem);
+}
+
 h2 {
   font-size: 2rem;
   color: #c0392b;
@@ -91,7 +96,6 @@ header {
 }
 
 .birthday {
-  font-size: clamp(1.5rem, 1.0652rem + 1.3913vw, 3.5rem);
   color: #ecf0f1;
   text-shadow: 1px 1px 1px #16a085;
   padding: 0 2rem;
@@ -123,6 +127,7 @@ main {
   border-radius: 10px;
   text-shadow: 1px 1px 1px #16a085;
 }
+
 nav {
   margin-top: 2rem;
 }
