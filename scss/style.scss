@@ -25,6 +25,7 @@ $colors: (
   "clouds": #ecf0f1,
   "turquoise": #1abc9c,
   "white": #ffffff,
+  "black": #000000,
 );
 
 $breakpoints: (
@@ -105,9 +106,14 @@ p {
 }
 
 a {
+  outline: 0;
   color: map-get($colors, "greensea");
-  &:hover {
+  &:hover, &:focus-visible {
     color: map-get($colors, "pomegranate");
+  }
+  &:focus-visible {
+    outline: 2px dotted map-get($map: $colors, $key: "black");
+    outline-offset: 3px;
   }
 }
 
@@ -126,6 +132,7 @@ h3 {
 }
 
 header {
+  min-width: 270px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,12 +168,13 @@ main {
 }
 
 #display-countdown {
-  width: 50%;
-  margin: 0 auto;
   position: absolute;
   top: 32%;
   left: 50%;
   transform: translateX(-50%);
+  min-width: 165px;
+  width: 50%;
+  margin: 0 auto 1rem;
   padding: 2rem;
   background-color: map-get($colors, "greensea");
   text-align: center;
@@ -174,14 +182,12 @@ main {
   font-size: clamp(2rem, calc(1.3793rem + 2.7586vw), 5rem);
   color: map-get($colors, "white");
   border-radius: 10px;
-  margin-bottom: 1rem;
   text-shadow: 1px 1px 1px map-get($colors, "belizehole");
   @include desktop-up {
     line-height: 80px;
   }
   @include tablet-portrait-only() {
     line-height: 50px;
-    top: 50%;
   }
 }
 
@@ -243,18 +249,20 @@ nav {
 .content {
   position: absolute;
   width: 90%;
+  min-width: 270px;
   min-height: 500px;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 5%;
   margin-bottom: 20px;
-  picture {
+  figure {
+    margin: 0 1rem 0 0;
     float: left;
-    margin-right: 1rem;
     img {
       border-radius: 5px;
     }
     @include tablet-portrait-down() {
+      margin: 0;
       float: none;
     }
   }

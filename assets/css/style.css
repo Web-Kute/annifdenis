@@ -45,10 +45,15 @@ p {
 }
 
 a {
+  outline: 0;
   color: #16a085;
 }
-a:hover {
+a:hover, a:focus-visible {
   color: #c0392b;
+}
+a:focus-visible {
+  outline: 2px dotted #000000;
+  outline-offset: 3px;
 }
 
 h2 {
@@ -68,6 +73,7 @@ h3 {
 }
 
 header {
+  min-width: 270px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,12 +108,13 @@ main {
 }
 
 #display-countdown {
-  width: 50%;
-  margin: 0 auto;
   position: absolute;
   top: 32%;
   left: 50%;
   transform: translateX(-50%);
+  min-width: 165px;
+  width: 50%;
+  margin: 0 auto 1rem;
   padding: 2rem;
   background-color: #16a085;
   text-align: center;
@@ -115,7 +122,6 @@ main {
   font-size: clamp(2rem, 1.3793rem + 2.7586vw, 5rem);
   color: #ffffff;
   border-radius: 10px;
-  margin-bottom: 1rem;
   text-shadow: 1px 1px 1px #16a085;
 }
 @media (min-width: 1200px) {
@@ -126,7 +132,6 @@ main {
 @media (min-width: 600px) and (max-width: 899px) {
   #display-countdown {
     line-height: 50px;
-    top: 50%;
   }
 }
 
@@ -194,21 +199,23 @@ nav i:hover, nav i.active {
 .content {
   position: absolute;
   width: 90%;
+  min-width: 270px;
   min-height: 500px;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 5%;
   margin-bottom: 20px;
 }
-.content picture {
+.content figure {
+  margin: 0 1rem 0 0;
   float: left;
-  margin-right: 1rem;
 }
-.content picture img {
+.content figure img {
   border-radius: 5px;
 }
 @media (max-width: 899px) {
-  .content picture {
+  .content figure {
+    margin: 0;
     float: none;
   }
 }
