@@ -65,3 +65,10 @@ function showInfos(e) {
 }
 
 showInfos();
+
+window.addEventListener("orientationchange", () => {
+  isLandscape = window.orientation === 90 || window.orientation === -90;
+  isLandscape
+    ? (diplayCountDown.style.display = "none")
+    : (diplayCountDown.style.display = "block");
+});

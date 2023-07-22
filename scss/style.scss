@@ -69,6 +69,12 @@ $breakpoints: (
   }
 }
 
+@mixin orientation-landscape {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}
+
 @mixin tablet-landscape-only {
   @media (min-width: map-get($breakpoints, "tablet-landscape-up")) and (max-width: map-get($breakpoints, "tablet-landscape-down")) {
     @content;
@@ -108,7 +114,8 @@ p {
 a {
   outline: 0;
   color: map-get($colors, "greensea");
-  &:hover, &:focus-visible {
+  &:hover,
+  &:focus-visible {
     color: map-get($colors, "pomegranate");
   }
   &:focus-visible {
@@ -178,16 +185,13 @@ main {
   padding: 2rem;
   background-color: map-get($colors, "greensea");
   text-align: center;
-  line-height: 35px;
   font-size: clamp(2rem, calc(1.3793rem + 2.7586vw), 5rem);
   color: map-get($colors, "white");
   border-radius: 10px;
   text-shadow: 1px 1px 1px map-get($colors, "belizehole");
-  @include desktop-up {
-    line-height: 80px;
-  }
-  @include tablet-portrait-only() {
-    line-height: 50px;
+
+  @include orientation-landscape() {
+    // display: none;
   }
 }
 
@@ -287,4 +291,29 @@ nav {
   font-size: 2rem;
   color: map-get($map: $colors, $key: "greensea");
   margin-right: 10px;
+}
+
+table {
+  table-layout: fixed;
+  width: 33%;
+  @include mobile-only(){
+    width: 100%;
+  }
+  thead th {
+    background-color: map-get($map: $colors, $key: "greensea");
+    padding: 5px;
+    color: map-get($map: $colors, $key: "white");
+  }
+  tr:nth-child(1) td {
+    border-bottom: 1px solid map-get($map: $colors, $key: "turquoise");
+  }
+  td + td {
+    border-left: 1px solid map-get($map: $colors, $key: "turquoise");
+  }
+  td {
+    text-align: center;
+  }
+}
+table + p {
+  font-size: 0.8rem;
 }

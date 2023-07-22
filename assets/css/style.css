@@ -118,23 +118,11 @@ main {
   padding: 2rem;
   background-color: #16a085;
   text-align: center;
-  line-height: 35px;
   font-size: clamp(2rem, 1.3793rem + 2.7586vw, 5rem);
   color: #ffffff;
   border-radius: 10px;
   text-shadow: 1px 1px 1px #16a085;
 }
-@media (min-width: 1200px) {
-  #display-countdown {
-    line-height: 80px;
-  }
-}
-@media (min-width: 600px) and (max-width: 899px) {
-  #display-countdown {
-    line-height: 50px;
-  }
-}
-
 nav {
   margin-top: 2rem;
 }
@@ -239,4 +227,32 @@ nav i:hover, nav i.active {
   font-size: 2rem;
   color: #16a085;
   margin-right: 10px;
+}
+
+table {
+  table-layout: fixed;
+  width: 33%;
+}
+@media (max-width: 599px) {
+  table {
+    width: 100%;
+  }
+}
+table thead th {
+  background-color: #16a085;
+  padding: 5px;
+  color: #ffffff;
+}
+table tr:nth-child(1) td {
+  border-bottom: 1px solid #1abc9c;
+}
+table td + td {
+  border-left: 1px solid #1abc9c;
+}
+table td {
+  text-align: center;
+}
+
+table + p {
+  font-size: 0.8rem;
 }/*# sourceMappingURL=style.css.map */

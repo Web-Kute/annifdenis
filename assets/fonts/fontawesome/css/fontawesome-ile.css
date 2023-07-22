@@ -109,3 +109,7 @@
   content: "\f21a"; }
   .fa-quote-left::before {
   content: "\f10d"; }
+  .fa-check::before {
+  content: "\f00c"; }
+  .fa-xmark::before {
+  content: "\f00d"; }
