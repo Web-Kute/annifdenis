@@ -1,7 +1,7 @@
 const diplayCountDown = document.getElementById("display-countdown");
-const displayDays = document.querySelector(".days");
-const displayHours = document.querySelector(".hours");
-const displayMinutes = document.querySelector(".minutes");
+const displayDays = diplayCountDown.querySelector(".days");
+const displayHours = diplayCountDown.querySelector(".hours");
+const displayMinutes = diplayCountDown.querySelector(".minutes");
 // set birthday date
 let countDownDate = new Date("nov 4, 2023 23:59:00").getTime();
 
@@ -26,20 +26,19 @@ const delay = setInterval(() => {
   const m =
     minutes === 0 || minutes === 1 ? `${minutes} minute` : `${minutes} minutes`;
 
-  displayDays.innerHTML = `${d}`;
-  displayHours.innerHTML = `${h}`;
-  displayMinutes.innerHTML = `${m}`;
+  displayDays.textContent = `${d}`;
+  displayHours.textContent = `${h}`;
+  displayMinutes.textContent = `${m}`;
 
   if (distance < 0) {
     clearInterval(delay);
-    diplayCountDown.innerHTML = "Happy Birthday Denis";
+    diplayCountDown.textContent = "Happy Birthday Denis";
   }
 }, 1000);
 
 function showInfos(e) {
   iconBtn.forEach((icon) => {
     icon.addEventListener("click", (e) => {
-      let current = document.querySelector(".active");
       const btnIcon = e.target.dataset.icon;
       const notSelect = document.querySelectorAll(
         ".content:not(." + btnIcon + ")"
@@ -47,10 +46,9 @@ function showInfos(e) {
       notSelect.forEach((elem) => {
         elem.classList.add("hide");
       });
-      e.target.classList.add("active");
-      if (current) {
-        current.classList.remove("active");
-      }
+
+      e.target.classList.toggle("active");
+      
       const select = document.querySelector("." + btnIcon + "");
       select.classList.toggle("hide");
       document.addEventListener("click", (e) => {
