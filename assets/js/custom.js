@@ -3,7 +3,7 @@ const displayDays = diplayCountDown.querySelector(".days");
 const displayHours = diplayCountDown.querySelector(".hours");
 const displayMinutes = diplayCountDown.querySelector(".minutes");
 // set birthday date
-let countDownDate = new Date("nov 4, 2023 23:59:00").getTime();
+let birthday = new Date("nov 4, 2023 23:59:00").getTime();
 
 const contentText = document.querySelectorAll(".content");
 const iconBtn = document.querySelectorAll(".icon");
@@ -11,7 +11,7 @@ const picture = document.querySelector(".info-pic");
 
 const delay = setInterval(() => {
   let now = new Date().getTime();
-  const distance = countDownDate - now;
+  const distance = birthday - now;
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor(

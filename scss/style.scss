@@ -26,6 +26,7 @@ $colors: (
   "turquoise": #1abc9c,
   "white": #ffffff,
   "black": #000000,
+  "silver": #bdc3c7,
 );
 
 $breakpoints: (
@@ -92,8 +93,15 @@ body {
 
 img {
   width: 100%;
-  max-width: 650px;
+  display: block;
 }
+
+.info-pic {
+  height: 100%;
+  max-width: 650px;
+  object-fit: cover;
+}
+
 // Reset original HTML button
 button {
   appearance: none;
@@ -212,10 +220,6 @@ nav {
   }
 }
 
-.infos {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
 nav {
   width: 80%;
   display: flex;
@@ -247,6 +251,10 @@ nav {
   }
 }
 
+.infos {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 .content {
   position: absolute;
   width: 90%;
@@ -266,6 +274,22 @@ nav {
       margin: 0;
       float: none;
     }
+  }
+}
+
+blockquote {
+  background-color: map-get($map: $colors, $key: "clouds");
+  border-left: 10px solid map-get($map: $colors, $key: "silver");
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 1.2rem;
+  // quotes: "\201C""\201D""\2018""\2019";
+  @include mobile-only(){
+    font-size: 1.1rem;
+    border-left: 6px solid map-get($map: $colors, $key: "silver");
+    margin: 1.2em 0;
   }
 }
 

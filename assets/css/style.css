@@ -25,7 +25,13 @@ body {
 
 img {
   width: 100%;
+  display: block;
+}
+
+.info-pic {
+  height: 100%;
   max-width: 650px;
+  object-fit: cover;
 }
 
 button {
@@ -153,10 +159,6 @@ nav {
   }
 }
 
-.infos {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
 nav {
   width: 80%;
   display: flex;
@@ -189,6 +191,10 @@ nav i:hover, nav i.active {
   color: #c0392b;
 }
 
+.infos {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 .content {
   position: absolute;
   width: 90%;
@@ -210,6 +216,23 @@ nav i:hover, nav i.active {
   .content figure {
     margin: 0;
     float: none;
+  }
+}
+
+blockquote {
+  background-color: #ecf0f1;
+  border-left: 10px solid #bdc3c7;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 1.2rem;
+}
+@media (max-width: 599px) {
+  blockquote {
+    font-size: 1.1rem;
+    border-left: 6px solid #bdc3c7;
+    margin: 1.2em 0;
   }
 }
 
