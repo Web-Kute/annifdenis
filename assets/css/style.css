@@ -83,6 +83,13 @@ h3 {
   font-size: 1.5rem;
 }
 
+hr {
+  height: 1px;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid #bdc3c7;
+}
+
 header {
   min-width: 270px;
   display: flex;
@@ -119,7 +126,7 @@ main {
 
 #display-countdown {
   position: absolute;
-  top: 32%;
+  top: 35%;
   left: 50%;
   transform: translateX(-50%);
   min-width: 165px;
@@ -166,14 +173,20 @@ nav {
 }
 nav .icon {
   position: relative;
-  background-color: #ecf0f1;
-  width: 70px;
-  height: 70px;
-  border-radius: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
+  width: 70px;
+  height: 70px;
+  border-radius: 70%;
   cursor: pointer;
+  color: #16a085;
+  font-size: clamp(1.5rem, 1.4059rem + 0.396vw, 2rem);
+  transition-duration: 300ms;
+}
+nav .icon:hover, nav .icon.active {
+  color: #c0392b;
 }
 @media (max-width: 599px) {
   nav .icon {
@@ -181,14 +194,6 @@ nav .icon {
     height: 50px;
     border-radius: 50%;
   }
-}
-nav i {
-  color: #16a085;
-  font-size: 1.5rem;
-  transition-duration: 300ms;
-}
-nav i:hover, nav i.active {
-  color: #c0392b;
 }
 
 .infos {
@@ -206,7 +211,7 @@ nav i:hover, nav i.active {
   margin-bottom: 20px;
 }
 .content figure {
-  margin: 0 1rem 0 0;
+  margin: 0 1rem 10px 0;
   float: left;
 }
 .content figure img {
@@ -222,15 +227,16 @@ nav i:hover, nav i.active {
 blockquote {
   background-color: #ecf0f1;
   border-left: 10px solid #bdc3c7;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
+  margin: 1em 10px;
+  padding: 0 10px 0.5rem;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  font-size: 1.2rem;
+  font-size: clamp(1.1rem, 1.0718rem + 0.1188vw, 1.25rem);
+  min-width: 190px;
+  display: flow-root;
 }
 @media (max-width: 599px) {
   blockquote {
-    font-size: 1.1rem;
     border-left: 6px solid #bdc3c7;
     margin: 1.2em 0;
   }

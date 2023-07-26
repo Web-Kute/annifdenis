@@ -5,10 +5,17 @@ const displayMinutes = diplayCountDown.querySelector(".minutes");
 // set birthday date
 let birthday = new Date("nov 4, 2023 23:59:00").getTime();
 
-const contentText = document.querySelectorAll(".content");
+const contentInfo = document.querySelectorAll(".content");
 const iconBtn = document.querySelectorAll(".icon");
 const picture = document.querySelector(".info-pic");
+const nav = document.querySelector("nav");
 
+const allIcons = () =>
+  iconBtn.forEach((icon) => {
+    console.log(icon);
+    return icon;
+  });
+allIcons();
 const delay = setInterval(() => {
   let now = new Date().getTime();
   const distance = birthday - now;
@@ -36,6 +43,25 @@ const delay = setInterval(() => {
   }
 }, 1000);
 
+// Click outside contentInfo
+// document.addEventListener("click", (e) => {
+//   const select = document.querySelector(".content:not(.hide)");
+//   console.log(select);
+//   if (!e.target.closest(".content:not(.hide)") && e.target !== nav) {
+//     select.classList.add("hide");
+//   }
+// });
+
+// Click outside contentInfo
+document.addEventListener("click", (e) => {
+  const select = document.querySelector(".content:not(.hide)");
+  // console.log(!e.target.closest(".content:not(.hide)"));
+  if (!e.target.closest(".content:not(.hide)")) {
+    // select.classList.add("hide");
+    console.log("outside", nav.children);
+  }
+});
+
 function showInfos(e) {
   iconBtn.forEach((icon) => {
     icon.addEventListener("click", (e) => {
@@ -47,16 +73,17 @@ function showInfos(e) {
         elem.classList.add("hide");
       });
 
-      e.target.classList.toggle("active");
-      
+      e.target.classList.add("active");
+
+      icon.classList.remove("active")
+
       const select = document.querySelector("." + btnIcon + "");
       select.classList.toggle("hide");
+
       document.addEventListener("click", (e) => {
         if (e.target !== select && e.target !== icon && e.target !== picture) {
-          select.classList.add("hide");
           icon.classList.remove("active");
         }
-        e.stopPropagation();
       });
     });
   });
