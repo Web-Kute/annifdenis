@@ -366,7 +366,7 @@ function cleanHex( $input){
           <p>Pour rejoindre le gîte à partir du port Le Palais :</p>
           <ul>
             <li>
-              Le Palais (Gare routière) - Sauzon puis 1km à pied jusqu'au gîte
+              Gare routière (les cars bleus) - Sauzon puis 1km à pied jusqu'au gîte
             </li>
             <li>15 minutes en voiture</li>
             <li>Navettes (à confirmer)</li>
