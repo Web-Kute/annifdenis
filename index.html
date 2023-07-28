@@ -44,9 +44,9 @@
     </header>
     <main>
       <div id="display-countdown">
-        <div class="days">100 jours</div>
-        <div class="hours">10 heures</div>
-        <div class="minutes">10 minutes</div>
+        <div class="days"><?php echo $days; ?> jours</div>
+        <div class="hours"><?php echo $hours; ?> heures</div>
+        <div class="minutes"><?php echo $min; ?> minutes</div>
       </div>
       <div class="container">
         <div class="content info hide">
@@ -79,7 +79,7 @@
             <i class="fa fa-quote-left" aria-hidden="true"></i> On dit que dans
             chaque vieux, il y a un jeune qui se demande ce qu’il s’est passé.
             <br />C’est lui sur la mobylette, le jeune. C’est moi ça ! Faut
-            absolument que je remette la main sur ce gilet !
+            absolument que je remette la main sur ce gilet&nbsp;!
           </p>
 
           <p>
@@ -122,14 +122,23 @@
             Je rajouterai ici, au besoin, d’autres infos, mais n’hésitez pas à
             me contacter si vous avez des questions.
           </p>
-          <form action="#" method="POST">
-            <input type="text" name="lastname" id="name" autocomplete="on" aria-placeholder="Nom Prénom" placeholder="Nom Prénom" required>
-            <input type="checkbox" name="participe" id="igoto" required>
-            <nav>
-              <button type="submit" class="submit">Je participe</button>
-              <button type="submit" class="submit">Je ne participe pas</button>
-            </nav>
+
+          <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" accept-charset="UTF-8">
+            <fieldset>
+              <input type="text" name="lastname" id="name" value="" autocomplete="on" aria-placeholder="Prénoms" placeholder="Prénoms" required minlength="4" maxlength="25" pattern="^[A-zÀ-ÿ ]*$">
+              <div class="day">
+                <label for="friday">Vendredi</label>
+                <input type="checkbox" name="day[]" id="friday" value="Vendredi">
+              </div>
+              <div class="day">
+                <label for="saturday">Samedi</label>
+                <input type="checkbox" name="day[]" id="saturday" value="Samedi">
+              </div>
+              <input type="hidden" name="token" value="<?php echo $token;?>"/>
+              <input type="submit" name="submit" id="submit" value="J'y vais"/>
+            </fieldset>
           </form>
+
         </div>
         <div class="content bed hide">
           <h2>Se loger</h2>
@@ -172,14 +181,14 @@
               </tr>
               <tr>
                 <td>1</td>
-                <td>8</td>
+                <td>5</td>
               </tr>
             </tbody>
           </table>
           <p>* mis à jour / réservation</p>
           <hr />
           <p>
-            Sur le site de Belle-Île-en-Mer vous trouverez tous les
+            Sur le site de Belle-Île-en-Mer, vous trouverez tous les
             <a
               href="https://www.belle-ile.com/organiser/les-hebergements/"
               target="_blank"
@@ -306,6 +315,6 @@
         </div>
       </div>
     </main>
-    <script src="assets/js/belleile.min.js" defer></script>
+    <script src="assets/js/custom.js" defer></script>
   </body>
 </html>

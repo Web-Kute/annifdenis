@@ -15,7 +15,7 @@ const allIcons = () =>
     console.log(icon);
     return icon;
   });
-allIcons();
+// allIcons();
 const delay = setInterval(() => {
   let now = new Date().getTime();
   const distance = birthday - now;
@@ -43,28 +43,10 @@ const delay = setInterval(() => {
   }
 }, 1000);
 
-// Click outside contentInfo
-// document.addEventListener("click", (e) => {
-//   const select = document.querySelector(".content:not(.hide)");
-//   console.log(select);
-//   if (!e.target.closest(".content:not(.hide)") && e.target !== nav) {
-//     select.classList.add("hide");
-//   }
-// });
-
-// Click outside contentInfo
-document.addEventListener("click", (e) => {
-  const select = document.querySelector(".content:not(.hide)");
-  // console.log(!e.target.closest(".content:not(.hide)"));
-  if (!e.target.closest(".content:not(.hide)")) {
-    // select.classList.add("hide");
-    console.log("outside", nav.children);
-  }
-});
-
 function showInfos(e) {
   iconBtn.forEach((icon) => {
     icon.addEventListener("click", (e) => {
+      let current = document.querySelector(".active");
       const btnIcon = e.target.dataset.icon;
       const notSelect = document.querySelectorAll(
         ".content:not(." + btnIcon + ")"
@@ -72,19 +54,15 @@ function showInfos(e) {
       notSelect.forEach((elem) => {
         elem.classList.add("hide");
       });
-
+  
       e.target.classList.add("active");
-
-      icon.classList.remove("active")
+      if (current) {
+        current.classList.remove("active");
+      }
 
       const select = document.querySelector("." + btnIcon + "");
       select.classList.toggle("hide");
-
-      document.addEventListener("click", (e) => {
-        if (e.target !== select && e.target !== icon && e.target !== picture) {
-          icon.classList.remove("active");
-        }
-      });
+ 
     });
   });
 }
@@ -97,3 +75,7 @@ window.addEventListener("orientationchange", () => {
     ? (diplayCountDown.style.display = "none")
     : (diplayCountDown.style.display = "block");
 });
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
