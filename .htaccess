@@ -63,7 +63,7 @@ Options -Indexes
 </files>
 <files secure.php>
   order allow,deny
-  Require all denied
+  deny from all
 </files>
 
 #les proxies doivent donner le bon contenu
