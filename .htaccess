@@ -61,6 +61,10 @@ Options -Indexes
   order allow,deny
   deny from all
 </files>
+<files secure.php>
+  order allow,deny
+  Require all denied
+</files>
 
 #les proxies doivent donner le bon contenu
 Header append Vary User-Agent env=!dont-vary

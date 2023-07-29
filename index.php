@@ -3,12 +3,14 @@ session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
+require_once("secure.php");
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 //check token
 if ( $_POST['submit'] == "J'y vais" && $_POST['token'] === $_SESSION['token']){
     $mail = new PHPMailer(true);
-    
+    $hashed = password_hash($password, PASSWORD_DEFAULT);
+    $mailpassword = password_verify($password, $hashed);
     function valid_data($data){
         $pattern = "/^[a-z]\w{2,23}[^_]$/i";
         $data = trim($data);
@@ -33,7 +35,7 @@ if ( $_POST['submit'] == "J'y vais" && $_POST['token'] === $_SESSION['token']){
             $choice .= $day . ' ';
         }
     }
-    if(!empty($name)){
+    if(!empty($name) && $mailpassword){        
         try {
             //Server settings
             $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
@@ -43,7 +45,7 @@ if ( $_POST['submit'] == "J'y vais" && $_POST['token'] === $_SESSION['token']){
             $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
             $mail->Username = 'alvardsandz@gmail.com';
-            $mail->Password = 'plqtuoicktgjowqi';                       //SMTP password
+            $mail->Password = $password;                       //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         
