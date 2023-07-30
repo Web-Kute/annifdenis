@@ -15,6 +15,11 @@
   src: url("../fonts/playfair-display/PlayfairDisplay-Regular.otf") format("opentype");
   font-display: swap;
 }
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../fonts/roboto/Roboto-Regular.ttf") format("opentype");
+  font-display: swap;
+}
 body {
   background-image: url("../img/bg-belle-ile.webp");
   background-repeat: no-repeat;
@@ -62,21 +67,21 @@ button,
 
 input[type=checkbox] {
   accent-color: #c0392b;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border: 1px solid #16a085;
   border-radius: 2px;
   border-radius: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-  background-color: #eee;
+  background-color: #ffffff;
   position: relative;
 }
 input[type=checkbox]:checked::before {
   content: "✓";
   font-size: 16px;
   position: absolute;
-  top: -2px;
+  top: -1px;
   left: 2px;
   color: #1abc9c;
 }
@@ -105,11 +110,11 @@ form fieldset {
 form label {
   cursor: pointer;
 }
-form input {
+form input[type=text] {
   height: 25px;
   outline: none;
 }
-form input:focus {
+form input[type=text]:focus {
   border: 2px solid #16a085;
   color: #000000;
 }
@@ -251,10 +256,6 @@ main {
   text-shadow: 1px 1px 1px #2980b9;
 }
 
-nav {
-  margin-top: 2rem;
-}
-
 .container {
   position: relative;
   display: flex;
@@ -277,11 +278,19 @@ nav {
 }
 
 nav {
+  margin-top: 2rem;
   width: 80%;
   display: flex;
   justify-content: space-around;
 }
-nav .icon {
+nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.2rem;
+  align-items: center;
+  cursor: pointer;
+}
+nav .nav-item .icon {
   position: relative;
   display: flex;
   justify-content: center;
@@ -293,17 +302,30 @@ nav .icon {
   cursor: pointer;
   color: #16a085;
   font-size: clamp(1.5rem, 1.4059rem + 0.396vw, 2rem);
-  transition-duration: 300ms;
 }
-nav .icon:hover, nav .icon.active {
+nav .nav-item .icon.active {
   color: #c0392b;
 }
 @media (max-width: 599px) {
-  nav .icon {
+  nav .nav-item .icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
   }
+}
+nav .nav-item:hover .icon {
+  color: #c0392b;
+}
+nav .nav-item:hover .nav-item_text {
+  color: #c0392b;
+}
+nav .nav-item_text {
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: clamp(1rem, 0.6674rem + 0.8884vw, 2rem);
+  color: #ffffff;
+}
+nav .nav-item_text.active {
+  color: #c0392b;
 }
 
 .infos {
@@ -332,6 +354,26 @@ nav .icon:hover, nav .icon.active {
     margin: 0;
     float: none;
   }
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+}
+.content-header .fa-xmark {
+  font-size: 2rem;
+  height: 26px;
+  color: #1abc9c;
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+@media (max-width: 599px) {
+  .content-header .fa-xmark {
+    font-size: 1.5rem;
+  }
+}
+.content-header .fa-xmark:hover {
+  color: #c0392b;
 }
 
 blockquote {

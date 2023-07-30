@@ -3,7 +3,7 @@ session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
-require_once("secure.php");
+require_once("auth.php");
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 //check token
@@ -118,14 +118,22 @@ function cleanHex( $input){
         <h1 class="birthday">Belle-Île-en-Mer</h1>
       </div>
       <nav>
-        <i data-icon="info" class="icon fa fa-info" aria-hidden="false"></i>
-        <i data-icon="bed" class="icon fa fa-bed" aria-hidden="false"></i>
-        <i
-          data-icon="cutlery"
-          class="icon fa fa-cutlery"
-          aria-hidden="false"
-        ></i>
-        <i data-icon="ship" class="icon fa fa-ship" aria-hidden="false"></i>
+        <div class="nav-item">
+          <i data-icon="info" class="icon fa fa-info" aria-hidden="false"></i>
+          <div class="nav-item_text">Invitation</div>
+        </div>
+        <div class="nav-item">
+          <i data-icon="bed" class="icon fa fa-bed" aria-hidden="false"></i>
+          <div class="nav-item_text">Se loger</div>
+        </div>
+        <div class="nav-item">
+          <i data-icon="cutlery" class="icon fa fa-cutlery" aria-hidden="false"></i>
+          <div class="nav-item_text">À table</div>
+        </div>
+        <div class="nav-item">
+          <i data-icon="ship" class="icon fa fa-ship" aria-hidden="false"></i>
+          <div class="nav-item_text">Accès</div>
+        </div>
       </nav>
     </header>
     <main>
@@ -136,7 +144,10 @@ function cleanHex( $input){
       </div>
       <div class="container">
         <div class="content info hide">
-          <h2>Invitation</h2>
+          <div class="content-header">
+            <h2>Invitation</h2>
+            <i class="fa fa-xmark" aria-hidden="false"></i>
+          </div>
           <figure>
             <img
               loading="lazy"
@@ -227,7 +238,10 @@ function cleanHex( $input){
 
         </div>
         <div class="content bed hide">
-          <h2>Se loger</h2>
+          <div class="content-header">
+            <h2>Se loger</h2>
+            <i class="fa fa-xmark" aria-hidden="false"></i>
+          </div>
           <p>Vous allez trouver votre bonheur à Belle-Île-en-Mer !</p>
           <p>Mais attention, c'est les vacances de la Toussaint et les places à Sauzon se font rares</p>
           <p>Vous pouvez essayer <a href="https://hotel-belleile-auxtamaris.fr/" target="_blank"
@@ -289,11 +303,17 @@ function cleanHex( $input){
           </ul>
         </div>
         <div class="content cutlery hide">
-          <h2>À table</h2>
+          <div class="content-header">
+            <h2>À table</h2>
+            <i class="fa fa-xmark" aria-hidden="false"></i>
+          </div>          
           <h3>Coming soon! &#x1F60B;</h3>
         </div>
         <div class="content ship hide">
-          <h2>Accès</h2>
+          <div class="content-header">
+            <h2>Accès</h2>
+            <i class="fa fa-xmark" aria-hidden="false"></i>
+          </div>
           <p>En train ou en voiture jusqu'à Quiberon</p>
           <hr />
           <p>

@@ -9,13 +9,9 @@ const contentInfo = document.querySelectorAll(".content");
 const iconBtn = document.querySelectorAll(".icon");
 const picture = document.querySelector(".info-pic");
 const nav = document.querySelector("nav");
+const closeCross = document.querySelectorAll(".fa-xmark");
+const navItem = document.querySelectorAll(".nav-item");
 
-const allIcons = () =>
-  iconBtn.forEach((icon) => {
-    console.log(icon);
-    return icon;
-  });
-// allIcons();
 const delay = setInterval(() => {
   let now = new Date().getTime();
   const distance = birthday - now;
@@ -54,15 +50,16 @@ function showInfos(e) {
       notSelect.forEach((elem) => {
         elem.classList.add("hide");
       });
-  
+
       e.target.classList.add("active");
+      e.target.nextElementSibling.classList.add("active");
       if (current) {
         current.classList.remove("active");
+        current.nextElementSibling.classList.remove("active");
       }
 
       const select = document.querySelector("." + btnIcon + "");
       select.classList.toggle("hide");
- 
     });
   });
 }
@@ -79,3 +76,13 @@ window.addEventListener("orientationchange", () => {
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
+
+closeCross.forEach((content) => {
+  content.addEventListener("click", () => {
+    content.closest(".content").classList.add("hide");
+    iconBtn.forEach((icon) => {
+      icon.classList.remove("active");
+      icon.nextElementSibling.classList.remove("active");
+    });
+  });
+});

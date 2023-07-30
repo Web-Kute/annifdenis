@@ -61,7 +61,7 @@ Options -Indexes
   order allow,deny
   deny from all
 </files>
-<files secure.php>
+<files auth.php>
   order allow,deny
   deny from all
 </files>
