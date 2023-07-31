@@ -41,13 +41,15 @@ if ( $_POST['submit'] == "J'y vais" && $_POST['token'] === $_SESSION['token']){
             $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
             $mail->isSMTP();
             $mail->setLanguage('fr');
-            $mail->CharSet = 'UTF-8';                                          //Send using SMTP
+            $mail->CharSet    = 'UTF-8';                                   //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username = 'alvardsandz@gmail.com';
-            $mail->Password = $password;                       //SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-            $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+            $mail->Username   = 'alvardsandz@gmail.com';
+            $mail->Password   = $password;                                //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable implicit TLS encryption
+            $mail->Port       = 587;                                    
+            //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+            // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; 
         
             //Recipients
             $mail->setFrom('alvardsandz@gmail.com', $name);
@@ -87,35 +89,35 @@ function cleanHex( $input){
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="description" content="Birthday" />
-    <meta name="author" content="Denis Godec" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="description" content="Birthday">
+    <meta name="author" content="Denis Godec">
+    <meta name="theme-color" content="#ffffff">
     <link
       rel="stylesheet"
       media="all"
       href="assets/fontawesome/css/fontawesome-ile.css"
-    />
+   >
     <link
       rel="stylesheet"
       media="all"
       href="assets/fontawesome/css/solid.css"
-    />
-    <link rel="stylesheet" media="all" href="assets/css/style.min.css" />
+   >
+    <link rel="stylesheet" media="all" href="assets/css/style.min.css">
     <title>60 ans - Belle-Île-en-Mer</title>
   </head>
   <body>
     <header>
       <div class="birth-title">
-        <h1 class="birthday">60 ans &#x1F382;</h1>
         <h1 class="birthday">Belle-Île-en-Mer</h1>
+        <h1 class="birthday">60 ans &#x1F382; Denis</h1>
       </div>
       <nav>
         <div class="nav-item">
@@ -124,11 +126,11 @@ function cleanHex( $input){
         </div>
         <div class="nav-item">
           <i data-icon="bed" class="icon fa fa-bed" aria-hidden="false"></i>
-          <div class="nav-item_text">Se loger</div>
+          <div class="nav-item_text">Se&nbsp;loger</div>
         </div>
         <div class="nav-item">
           <i data-icon="cutlery" class="icon fa fa-cutlery" aria-hidden="false"></i>
-          <div class="nav-item_text">À table</div>
+          <div class="nav-item_text">À&nbsp;table</div>
         </div>
         <div class="nav-item">
           <i data-icon="ship" class="icon fa fa-ship" aria-hidden="false"></i>
@@ -161,28 +163,28 @@ function cleanHex( $input){
               sizes="(max-width: 650px) 100vw"
               alt="Collège Kerpaour"
               class="info-pic"
-            />
+           >
           </figure>
           <blockquote>
-            <strong>3 au 5 novembre 2023</strong><br />
+            <strong>3 au 5 novembre 2023</strong><br>
             Belle-Île-en-Mer.
             <address>
-              Le Relais-Côtier <br />
-              Chemin de Port-Puce, <br />
+              Le Relais-Côtier <br>
+              Chemin de Port-Puce, <br>
               56320 Sauzon
             </address>
           </blockquote>
           <p>
             <i class="fa fa-quote-left" aria-hidden="true"></i> On dit que dans
             chaque vieux, il y a un jeune qui se demande ce qu’il s’est passé.
-            <br />C’est lui sur la mobylette, le jeune. C’est moi ça ! Faut
+            <br>C’est lui sur la mobylette, le jeune. C’est moi ça ! Faut
             absolument que je remette la main sur ce gilet&nbsp;!
           </p>
 
           <p>
             Comme j’avais envie de fêter mes 50 ans, j’ai un peu de retard, mais
             maintenant, je sens bien qu’il ne faut pas tarder à s’amuser.
-            <br />Alors ni une ni deux dans un cadre splendide, je vous invite à
+            <br>Alors ni une ni deux dans un cadre splendide, je vous invite à
             fêter cet événement.
           </p>
           <div style="clear: both"></div>
@@ -206,7 +208,7 @@ function cleanHex( $input){
               rel="noopener noreferrer"
               >Le Relais côtier</a
             >, il y a 32 places, vous pourrez y loger, pour les premiers
-            arrivés. <br />Dans la rubrique « Se loger », vous trouverez les
+            arrivés. <br>Dans la rubrique « Se loger », vous trouverez les
             infos pour réserver d’autres
             <a
               href="https://www.belle-ile.com/organiser/les-hebergements/"
@@ -220,7 +222,7 @@ function cleanHex( $input){
             me contacter si vous avez des questions.
           </p>
 
-          <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" accept-charset="UTF-8">
+          <form action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" accept-charset="UTF-8">
             <fieldset>
               <input type="text" name="lastname" id="name" value="" autocomplete="on" aria-placeholder="Prénoms" placeholder="Prénoms" required minlength="4" maxlength="25" pattern="^[A-zÀ-ÿ ]*$">
               <div class="day">
@@ -239,7 +241,7 @@ function cleanHex( $input){
         </div>
         <div class="content bed hide">
           <div class="content-header">
-            <h2>Se loger</h2>
+            <h2>Se&nbsp;loger</h2>
             <i class="fa fa-xmark" aria-hidden="false"></i>
           </div>
           <p>Vous allez trouver votre bonheur à Belle-Île-en-Mer !</p>
@@ -286,7 +288,7 @@ function cleanHex( $input){
             </tbody>
           </table>
           <p>* mis à jour / réservation</p>
-          <hr />
+          <hr>
           <p>
             Sur le site de Belle-Île-en-Mer, vous trouverez tous les
             <a
@@ -304,7 +306,7 @@ function cleanHex( $input){
         </div>
         <div class="content cutlery hide">
           <div class="content-header">
-            <h2>À table</h2>
+            <h2>À&nbsp;table</h2>
             <i class="fa fa-xmark" aria-hidden="false"></i>
           </div>          
           <h3>Coming soon! &#x1F60B;</h3>
@@ -315,7 +317,7 @@ function cleanHex( $input){
             <i class="fa fa-xmark" aria-hidden="false"></i>
           </div>
           <p>En train ou en voiture jusqu'à Quiberon</p>
-          <hr />
+          <hr>
           <p>
             Il vous faudra prévoir d'arriver une heure avant l'embarquement afin
             de stationner dans un des parkings situés à Quiberon.
@@ -330,7 +332,7 @@ function cleanHex( $input){
             >.
           </p>
           <p>
-            Les parkings ci-dessous sont ouverts jusqu'au 6 novembre.<br />
+            Les parkings ci-dessous sont ouverts jusqu'au 6 novembre.<br>
             <a href="https://www.ville-quiberon.fr/parking-des-iles/"
               >Parking des îles</a
             >
@@ -346,12 +348,10 @@ function cleanHex( $input){
             réservation (navettes gratuites)
           </p>
           <p>
-            <a href="https://quiberon-parking.fr/index.html"
-              >Parking de Sizorn</a
-            >
+            <a href="https://quiberon-parking.fr/index.html">Parking de Sizorn</a>
             le plus proche de la gare maritime
           </p>
-          <hr />
+          <hr>
           <p>
             <a
               href="https://www.compagnie-oceane.fr/"
@@ -361,7 +361,7 @@ function cleanHex( $input){
             >
             assure la liaison <strong>Quiberon – Le Palais :</strong> toute
             l’année pour les passagers et les véhicules (entre 5 à 13
-            allers-retours par jour suivant la saison). <br />Pensez à réserver
+            allers-retours par jour suivant la saison). <br>Pensez à réserver
             vos traversées A/R !
           </p>
           <p>
@@ -370,8 +370,7 @@ function cleanHex( $input){
           </p>
 
           <p>
-            <strong>Durée de la traversée :</strong> 45 minutes, arrivée au port
-            de Le Palais
+            <strong>Durée de la traversée :</strong> 45 minutes, arrivée au port de Le Palais
           </p>
           <p>
             <a
@@ -383,40 +382,27 @@ function cleanHex( $input){
             de Belle-Île-en-Mer vous informe sur d'autres ports au départ du
             continent.
           </p>
-          <hr />
+          <hr>
           <p>Le gîte <i>Le Relais-Côtier</i> est situé à Sauzon.</p>
           <p>Pour rejoindre le gîte à partir du port Le Palais :</p>
           <ul>
-            <li>
-              Gare routière (les cars bleus) - Sauzon puis 1km à pied jusqu'au gîte
-            </li>
+            <li>Gare routière (les cars bleus) - Sauzon puis 1km à pied jusqu'au gîte</li>
             <li>15 minutes en voiture</li>
             <li>Navettes (à confirmer)</li>
             <li>
-              <a
-                href="https://www.belle-ile.com/organiser/se-deplacer-belle-ile-sans-ma-voiture/taxis-vtc-a-belle-ile/"
-                >Taxis</a
-              >
+              <a href="https://www.belle-ile.com/organiser/se-deplacer-belle-ile-sans-ma-voiture/taxis-vtc-a-belle-ile/">Taxis</a>
             </li>
           </ul>
           <address>
-            Le Relais-Côtier <br />
-            Chemin de Port-Puce <br />
+            Le Relais-Côtier <br>
+            Chemin de Port-Puce <br>
             56360 Sauzon
           </address>
           <hr>
+          <p>Si vous désirez visiter l'île, vous pourrez louer voitures, scooters, vélos.</p>
           <p>
-            Si vous désirez visiter l'île, vous pourrez louer voitures,
-            scooters, vélos.
-          </p>
-          <p>
-            <strong>Location de voiture : </strong
-            ><a
-              href="https://www.locatourisle.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Locatourisle</a
-            >
+            <strong>Location de voitures : </strong>
+            <a href="https://www.locatourisle.com/" target="_blank" rel="noopener noreferrer">Locatourisle</a>
           </p>
         </div>
       </div>

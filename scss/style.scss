@@ -342,6 +342,9 @@ nav {
   width: 80%;
   display: flex;
   justify-content: space-around;
+  @include mobile-only(){
+    column-gap: 1.6rem;
+  }
 
   .nav-item {
     display: flex;

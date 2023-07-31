@@ -283,6 +283,11 @@ nav {
   display: flex;
   justify-content: space-around;
 }
+@media (max-width: 599px) {
+  nav {
+    column-gap: 1.6rem;
+  }
+}
 nav .nav-item {
   display: flex;
   flex-direction: column;
