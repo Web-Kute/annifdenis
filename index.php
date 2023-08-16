@@ -120,23 +120,23 @@ function cleanHex( $input){
         <h1 class="birthday">60 ans &#x1F382; Denis</h1>
       </div>
       <nav>
-        <div class="nav-item">
-          <i data-icon="info" class="icon fa fa-info" aria-hidden="false"></i>
-          <div data-icon="info" class="nav-item_text">Invitation</div>
+        <div data-icon="invite" class="nav-item">
+          <i data-icon="invite" class="icon fa fa-info" aria-hidden="false"></i>
+          <div data-icon="invite" class="nav-item_text">Invite</div>
         </div>
-        <div class="nav-item">
+        <div data-icon="bed" class="nav-item">
           <i data-icon="bed" class="icon fa fa-bed" aria-hidden="false"></i>
           <div data-icon="bed" class="nav-item_text">Se&nbsp;loger</div>
         </div>
-        <div class="nav-item">
+        <div data-icon="cutlery" class="nav-item">
           <i data-icon="cutlery" class="icon fa fa-cutlery" aria-hidden="false"></i>
           <div data-icon="cutlery" class="nav-item_text">À&nbsp;table</div>
         </div>
-        <div class="nav-item">
+        <div data-icon="ship" class="nav-item">
           <i data-icon="ship" class="icon fa fa-ship" aria-hidden="false"></i>
           <div data-icon="ship" class="nav-item_text">Accès</div>
         </div>
-        <div class="nav-item">
+        <div data-icon="plus" class="nav-item">
           <i data-icon="plus" class="icon fa fa-plus" aria-hidden="false"></i>
           <div data-icon="plus" class="nav-item_text">Infos</div>
         </div>
@@ -288,7 +288,7 @@ function cleanHex( $input){
               </tr>
               <tr>
                 <td>0</td>
-                <td>1</td>
+                <td>0</td>
               </tr>
             </tbody>
           </table>
@@ -415,11 +415,14 @@ function cleanHex( $input){
             <a href="https://www.locatourisle.com/" target="_blank" rel="noopener noreferrer">Locatourisle</a>
           </p>
         </div>
-        <div class="content infos hide">
+        <div class="content plus hide">
           <div class="content-header">
             <h2>Y penser</h2>
             <i class="fa fa-xmark" aria-hidden="false"></i>
           </div>
+          <p>C'est la Bretagne ! Il peut faire beau un 5 novembre. Il y a un microclimat sur l'île, qu'ils disent.</p>
+          <p>Alors n'oubliez pas vos chaussures de marche afin de fouler les sentiers côtiers.</p>
+          <p>Les filles, si vous avez des talons pour le soir&nbsp;^^, on pourrait se faire un tango.</p>
         </div>
       </div>
     </main>

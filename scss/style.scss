@@ -360,7 +360,7 @@ nav {
   display: flex;
   justify-content: space-around;
   @include mobile-only() {
-    column-gap: 1.6rem;
+    column-gap: 1rem;
   }
 
   .nav-item {
