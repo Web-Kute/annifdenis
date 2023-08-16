@@ -122,19 +122,23 @@ function cleanHex( $input){
       <nav>
         <div class="nav-item">
           <i data-icon="info" class="icon fa fa-info" aria-hidden="false"></i>
-          <div class="nav-item_text">Invitation</div>
+          <div data-icon="info" class="nav-item_text">Invitation</div>
         </div>
         <div class="nav-item">
           <i data-icon="bed" class="icon fa fa-bed" aria-hidden="false"></i>
-          <div class="nav-item_text">Se&nbsp;loger</div>
+          <div data-icon="bed" class="nav-item_text">Se&nbsp;loger</div>
         </div>
         <div class="nav-item">
           <i data-icon="cutlery" class="icon fa fa-cutlery" aria-hidden="false"></i>
-          <div class="nav-item_text">À&nbsp;table</div>
+          <div data-icon="cutlery" class="nav-item_text">À&nbsp;table</div>
         </div>
         <div class="nav-item">
           <i data-icon="ship" class="icon fa fa-ship" aria-hidden="false"></i>
-          <div class="nav-item_text">Accès</div>
+          <div data-icon="ship" class="nav-item_text">Accès</div>
+        </div>
+        <div class="nav-item">
+          <i data-icon="plus" class="icon fa fa-plus" aria-hidden="false"></i>
+          <div data-icon="plus" class="nav-item_text">Infos</div>
         </div>
       </nav>
     </header>
@@ -145,7 +149,7 @@ function cleanHex( $input){
         <div class="minutes"><?php echo $min; ?> minutes</div>
       </div>
       <div class="container">
-        <div class="content info hide">
+        <div class="content invite hide">
           <div class="content-header">
             <h2>Invitation</h2>
             <i class="fa fa-xmark" aria-hidden="false"></i>
@@ -192,8 +196,8 @@ function cleanHex( $input){
           <p>
             Afin d’organiser au mieux les réjouissances, vous pouvez me
             confirmer votre présence par mail
-            <a href="mailto:alvardsandz@gmail.com">alvardsandz@gmail.com</a> ou
-            par téléphone avant le 20 septembre.
+            <a href="mailto:alvardsandz@gmail.com">alvardsandz@gmail.com</a>,
+            par téléphone ou via le formulaire ci-dessous avant le 20 septembre.
           </p>
 
           <p>
@@ -218,7 +222,7 @@ function cleanHex( $input){
             >.
           </p>
           <p>
-            Je rajouterai ici, au besoin, d’autres infos, mais n’hésitez pas à
+            Je rajouterai, au fur et à mesure, d’autres informations sur ce site, mais n’hésitez pas à
             me contacter si vous avez des questions.
           </p>
 
@@ -270,6 +274,7 @@ function cleanHex( $input){
             en me contactant car j'ai l'exclusivité et la gestion du gîte pour
             cette période.
           </p>
+          <p><em class="red">Pensez à prendre des draps, sinon vous pourrez en louer sur place !</em></p>
           <table>
             <thead>
               <tr>
@@ -282,8 +287,8 @@ function cleanHex( $input){
                 <td>3 lits</td>
               </tr>
               <tr>
+                <td>0</td>
                 <td>1</td>
-                <td>5</td>
               </tr>
             </tbody>
           </table>
@@ -316,8 +321,13 @@ function cleanHex( $input){
             <h2>Accès</h2>
             <i class="fa fa-xmark" aria-hidden="false"></i>
           </div>
-          <p>En train ou en voiture jusqu'à Quiberon</p>
+          <p><strong>En train : </strong></p>
+          <ol>
+            <li>jusqu'à Auray</li>
+            <li>Auray - Quiberon : bus n°1</li>
+          </ol>
           <hr>
+          <p><strong>En voiture</strong> jusqu'à Quiberon : </p>
           <p>
             Il vous faudra prévoir d'arriver une heure avant l'embarquement afin
             de stationner dans un des parkings situés à Quiberon.
@@ -404,6 +414,12 @@ function cleanHex( $input){
             <strong>Location de voitures : </strong>
             <a href="https://www.locatourisle.com/" target="_blank" rel="noopener noreferrer">Locatourisle</a>
           </p>
+        </div>
+        <div class="content infos hide">
+          <div class="content-header">
+            <h2>Y penser</h2>
+            <i class="fa fa-xmark" aria-hidden="false"></i>
+          </div>
         </div>
       </div>
     </main>

@@ -47,6 +47,21 @@ ul li::before {
   margin-left: -1em;
 }
 
+ol {
+  counter-reset: item;
+}
+
+ol li {
+  display: block;
+}
+
+ol li:before {
+  content: counter(item) ". ";
+  font-weight: bold;
+  counter-increment: item;
+  color: #c0392b;
+}
+
 .info-pic {
   height: 100%;
   max-width: 650px;
@@ -72,6 +87,7 @@ input[type=checkbox] {
   border: 1px solid #16a085;
   border-radius: 2px;
   border-radius: none;
+  appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   background-color: #ffffff;
@@ -205,6 +221,10 @@ hr {
   border-top: 1px solid #bdc3c7;
 }
 
+.red {
+  color: #c0392b;
+}
+
 header {
   min-width: 270px;
   display: flex;
@@ -328,13 +348,10 @@ nav .nav-item_text {
   font-family: "Roboto-Regular", sans-serif;
   font-size: clamp(1rem, 0.6674rem + 0.8884vw, 2rem);
   color: #ffffff;
+  transition-duration: 300ms;
 }
 nav .nav-item_text.active {
   color: #c0392b;
-}
-
-.infos {
-  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .content {
@@ -367,10 +384,11 @@ nav .nav-item_text.active {
 }
 .content-header .fa-xmark {
   font-size: 2rem;
-  height: 26px;
+  height: 30px;
   color: #1abc9c;
   cursor: pointer;
   transition-duration: 300ms;
+  transform-origin: center;
 }
 @media (max-width: 599px) {
   .content-header .fa-xmark {
@@ -379,6 +397,7 @@ nav .nav-item_text.active {
 }
 .content-header .fa-xmark:hover {
   color: #c0392b;
+  transform: rotate(225deg);
 }
 
 blockquote {

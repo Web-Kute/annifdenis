@@ -144,3 +144,6 @@
 .fa-arrow-left::before {
   content: "\f060";
 }
+.fa-plus::before {
+  content: "\2b";
+}

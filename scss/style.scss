@@ -115,6 +115,19 @@ ul li::before {
   margin-left: -1em;
 }
 
+ol {
+  counter-reset: item;
+}
+ol li {
+  display: block;
+}
+ol li:before {
+  content: counter(item) ". ";
+  font-weight: bold;
+  counter-increment: item;
+  color: map-get($colors, "pomegranate");
+}
+
 .info-pic {
   height: 100%;
   max-width: 650px;
@@ -136,12 +149,12 @@ button,
 
 input[type="checkbox"] {
   accent-color: map-get($map: $colors, $key: "pomegranate");
-  // accent-color: lime;
   width: 22px;
   height: 22px;
   border: 1px solid map-get($map: $colors, $key: "greensea");
   border-radius: 2px;
   border-radius: none;
+  appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   background-color: map-get($map: $colors, $key: "white");
@@ -177,7 +190,7 @@ form {
   label {
     cursor: pointer;
   }
-  input[type="text"]  {
+  input[type="text"] {
     height: 25px;
     outline: none;
     &:focus {
@@ -271,6 +284,10 @@ hr {
   border-top: 1px solid map-get($colors, "silver");
 }
 
+.red {
+  color: map-get($colors, "pomegranate");
+}
+
 header {
   min-width: 270px;
   display: flex;
@@ -342,7 +359,7 @@ nav {
   width: 80%;
   display: flex;
   justify-content: space-around;
-  @include mobile-only(){
+  @include mobile-only() {
     column-gap: 1.6rem;
   }
 
@@ -387,15 +404,12 @@ nav {
       font-family: "Roboto-Regular", sans-serif;
       font-size: clamp(1rem, 0.6674rem + 0.8884vw, 2rem);
       color: map-get($map: $colors, $key: "white");
+      transition-duration: 300ms;
       &.active {
         color: map-get($colors, "pomegranate");
       }
     }
   }
-}
-
-.infos {
-  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .content {
@@ -425,15 +439,17 @@ nav {
   justify-content: space-between;
   .fa-xmark {
     font-size: 2rem;
-    height: 26px;
+    height: 30px;
     color: map-get($map: $colors, $key: "turquoise");
     cursor: pointer;
     transition-duration: 300ms;
-    @include mobile-only(){
+    transform-origin: center;
+    @include mobile-only() {
       font-size: 1.5rem;
     }
     &:hover {
       color: map-get($map: $colors, $key: "pomegranate");
+      transform: rotate(225deg);
     }
   }
 }

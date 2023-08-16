@@ -39,32 +39,40 @@ const delay = setInterval(() => {
   }
 }, 1000);
 
-function showInfos(e) {
-  iconBtn.forEach((icon) => {
-    icon.addEventListener("click", (e) => {
-      let current = document.querySelector(".active");
-      const btnIcon = e.target.dataset.icon;
-      const notSelect = document.querySelectorAll(
-        ".content:not(." + btnIcon + ")"
-      );
-      notSelect.forEach((elem) => {
-        elem.classList.add("hide");
-      });
-
-      e.target.classList.add("active");
-      e.target.nextElementSibling.classList.add("active");
-      if (current) {
-        current.classList.remove("active");
-        current.nextElementSibling.classList.remove("active");
-      }
-
-      const select = document.querySelector("." + btnIcon + "");
-      select.classList.toggle("hide");
+navItem.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    let current = document.querySelectorAll(".active");
+    const btnIcon = e.target.dataset.icon;
+    const notSelect = document.querySelectorAll(
+      ".content:not(." + btnIcon + ")"
+    );
+    notSelect.forEach((elem) => {
+      elem.classList.add("hide");
     });
-  });
-}
+    current.forEach((item) => {
+      if (item) {
+        item.classList.remove("active");
+      }
+    });
 
-showInfos();
+    if (
+      e.target.classList.contains("icon") ||
+      e.target.classList.contains("nav-item_text")
+    ) {
+      for (let index = 0; index < item.children.length; index++) {
+        item.children[index].classList.add("active");
+      }
+    }
+
+    const select = document.querySelector("." + btnIcon + "");
+    select.classList.toggle("hide");
+    if (select.classList.contains("hide")) {
+      for (let index = 0; index < item.children.length; index++) {
+        item.children[index].classList.remove("active");
+      }
+    }
+  });
+});
 
 window.addEventListener("orientationchange", () => {
   isLandscape = window.orientation === 90 || window.orientation === -90;
