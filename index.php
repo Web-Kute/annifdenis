@@ -104,13 +104,15 @@ function cleanHex( $input){
       rel="stylesheet"
       media="all"
       href="assets/fontawesome/css/fontawesome-ile.css"
+      as="style"
    >
     <link
       rel="stylesheet"
       media="all"
       href="assets/fontawesome/css/solid.css"
+      as="style"
    >
-    <link rel="stylesheet" media="all" href="assets/css/style.min.css">
+    <link rel="stylesheet" media="all" href="assets/css/style.min.css" as="style">
     <title>60 ans - Belle-Île-en-Mer</title>
   </head>
   <body>
@@ -420,9 +422,9 @@ function cleanHex( $input){
             <h2>Y penser</h2>
             <i class="fa fa-xmark" aria-hidden="false"></i>
           </div>
-          <p>C'est la Bretagne ! Il peut faire beau un 5 novembre. Il y a un microclimat sur l'île, qu'ils disent.</p>
+          <p>C'est la Bretagne ! Il y a un microclimat sur l'île, il peut faire beau un 5 novembre.</p>
           <p>Alors n'oubliez pas vos chaussures de marche afin de fouler les sentiers côtiers.</p>
-          <p>Les filles, si vous avez des talons pour le soir&nbsp;^^, on pourrait se faire un tango.</p>
+          <p>Les filles, si vous avez des talons pour le soir, on pourrait se faire un tango&nbsp;^^.</p>
         </div>
       </div>
     </main>

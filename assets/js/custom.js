@@ -1,15 +1,14 @@
 document.addEventListener("DOMContentLoaded", (e) => {
+  const iconBtn = document.querySelectorAll(".icon");
+  const closeCross = document.querySelectorAll(".fa-xmark");
+  const navItem = document.querySelectorAll(".nav-item");
+  
   const diplayCountDown = document.getElementById("display-countdown");
   const displayDays = diplayCountDown.querySelector(".days");
   const displayHours = diplayCountDown.querySelector(".hours");
   const displayMinutes = diplayCountDown.querySelector(".minutes");
   // set birthday date
   let birthday = new Date("nov 4, 2023 23:59:00").getTime();
-
-  const iconBtn = document.querySelectorAll(".icon");
-  const closeCross = document.querySelectorAll(".fa-xmark");
-  const navItem = document.querySelectorAll(".nav-item");
-
   const delay = setInterval(() => {
     let now = new Date().getTime();
     const timeLeft = birthday - now;
