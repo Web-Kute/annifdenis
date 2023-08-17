@@ -6,23 +6,20 @@ document.addEventListener("DOMContentLoaded", (e) => {
   // set birthday date
   let birthday = new Date("nov 4, 2023 23:59:00").getTime();
 
-  const contentInfo = document.querySelectorAll(".content");
   const iconBtn = document.querySelectorAll(".icon");
-  const picture = document.querySelector(".info-pic");
-  const nav = document.querySelector("nav");
   const closeCross = document.querySelectorAll(".fa-xmark");
   const navItem = document.querySelectorAll(".nav-item");
 
   const delay = setInterval(() => {
     let now = new Date().getTime();
-    const distance = birthday - now;
+    const timeLeft = birthday - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    // const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
     // Format date
     const d = days === 0 || days === 1 ? `${days} jour` : `${days} jours`;
@@ -36,7 +33,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     displayHours.textContent = `${h}`;
     displayMinutes.textContent = `${m}`;
 
-    if (distance < 0) {
+    if (timeLeft < 0) {
       clearInterval(delay);
       diplayCountDown.textContent = "Happy Birthday Denis";
     }
