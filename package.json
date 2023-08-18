@@ -10,5 +10,12 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^4.0.2"
-  }
+  },
+  "dependencies": {
+    "sass": "^1.66.0",
+    "sass-autoprefixer": "^1.0.1"
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }
