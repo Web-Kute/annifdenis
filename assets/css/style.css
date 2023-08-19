@@ -120,6 +120,11 @@ input[type=checkbox]:checked::before {
   -moz-column-gap: 2px;
        column-gap: 2px;
 }
+@media (max-width: 599px) {
+  .day {
+    font-size: 0.8rem;
+  }
+}
 
 form {
   margin: 2rem 0;
@@ -164,6 +169,7 @@ form input[type=text]:focus {
 #submit {
   background-color: #2980b9;
   color: #ffffff;
+  font-size: 1rem;
   padding: 7px 30px;
   width: 160px;
   height: 32px;
