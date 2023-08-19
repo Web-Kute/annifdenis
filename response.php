@@ -41,11 +41,6 @@
   </head>
   <body>
     <main>
-        <div id="display-countdown">
-          <div class="days"><?php echo $days; ?> jours</div>
-          <div class="hours"><?php echo $hours; ?> heures</div>
-          <div class="minutes"><?php echo $min; ?> minutes</div>
-        </div>
         <section class="header-response">
             <h1 class="response"> &#x1F389; Let's go party! &#x1F389; <? echo $name ?></h1>
             <div><i class="fa fa-arrow-left" aria-hidden="true"></i><button class="btn-back" onclick="history.back()">Retour</button></div>

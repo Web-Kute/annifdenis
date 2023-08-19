@@ -2,7 +2,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const iconBtn = document.querySelectorAll(".icon");
   const closeCross = document.querySelectorAll(".fa-xmark");
   const navItem = document.querySelectorAll(".nav-item");
-  
+  const container = document.querySelector(".container");
+  const content = container.querySelectorAll(".content");
+  const invite = document.querySelector(".invite");
+
   const diplayCountDown = document.getElementById("display-countdown");
   const displayDays = diplayCountDown.querySelector(".days");
   const displayHours = diplayCountDown.querySelector(".hours");
@@ -63,33 +66,34 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
       const select = document.querySelector("." + btnIcon + "");
       select.classList.toggle("hide");
+      content.forEach((elem) => {
+        elem.classList.add("fadein");
+      });
       if (select.classList.contains("hide")) {
         for (let index = 0; index < item.children.length; index++) {
           item.children[index].classList.remove("active");
         }
+        content.forEach((elem) => {
+          elem.classList.remove("fadein");
+        });
       }
     });
   });
 
-  function hideCounter() {
-    isLandscape = window.orientation === 90 || window.orientation === -90;
-    isLandscape
-      ? diplayCountDown.classList.add("hide")
-      : diplayCountDown.classList.remove("hide");
-  }
+  const contentOffset = invite.getBoundingClientRect();
+  const top = Math.floor(contentOffset.top) + 50;
+  diplayCountDown.style.setProperty("top", top + "px");
 
-  window.addEventListener("orientationchange", () => {
-    hideCounter();
-  });
-
-  hideCounter();
-
-  closeCross.forEach((content) => {
-    content.addEventListener("click", () => {
-      content.closest(".content").classList.add("hide");
+  closeCross.forEach((cross) => {
+    cross.addEventListener("click", (e) => {
+      cross.closest(".content").classList.add("hide");
+      cross.closest(".content").classList.remove("fadein");
       iconBtn.forEach((icon) => {
         icon.classList.remove("active");
         icon.nextElementSibling.classList.remove("active");
+      });
+      content.forEach((elem) => {
+        elem.classList.remove("fadein");
       });
     });
   });

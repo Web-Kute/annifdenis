@@ -103,16 +103,14 @@ function cleanHex( $input){
     <link
       rel="stylesheet"
       media="all"
-      href="assets/fontawesome/css/fontawesome-ile.css"
-      as="style"
+      href="assets/fontawesome/css/fontawesome-ile.css"     
    >
     <link
       rel="stylesheet"
       media="all"
-      href="assets/fontawesome/css/solid.css"
-      as="style"
+      href="assets/fontawesome/css/solid.css"     
    >
-    <link rel="stylesheet" media="all" href="assets/css/style.min.css" as="style">
+    <link rel="stylesheet" media="all" href="assets/css/style.min.css">
     <title>60 ans - Belle-Île-en-Mer</title>
   </head>
   <body>
@@ -230,7 +228,7 @@ function cleanHex( $input){
 
           <form action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" accept-charset="UTF-8">
             <fieldset>
-              <input type="text" name="lastname" id="name" value="" autocomplete="on" aria-placeholder="Prénoms" placeholder="Prénoms" required minlength="4" maxlength="25" pattern="^[A-zÀ-ÿ ]*$">
+              <input type="text" name="lastname" id="name" value="" autocomplete="on" placeholder="Prénoms" required minlength="4" maxlength="25" pattern="^[A-zÀ-ÿ ]*$">
               <div class="day">
                 <label for="friday">Vendredi</label>
                 <input type="checkbox" name="day[]" id="friday" value="Vendredi">
@@ -428,6 +426,6 @@ function cleanHex( $input){
         </div>
       </div>
     </main>
-    <script src="assets/js/custom.js" defer></script>
+    <script src="assets/js/custom.min.js" defer></script>
   </body>
 </html>
