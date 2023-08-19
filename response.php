@@ -1,17 +1,3 @@
-<?php
-// Set time left
-    $birthday = 1699142340;
-    $time_left = $birthday - time();
-
-    $days = floor($time_left / (60*60*24));
-    $time_left %= (60 * 60 * 24);
-
-    $hours = floor($time_left / (60 * 60));
-    $time_left %= (60 * 60);
-
-    $min = floor($time_left / 60);
-    $time_left %= 60;
-?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>

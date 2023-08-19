@@ -229,13 +229,15 @@ function cleanHex( $input){
           <form action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" accept-charset="UTF-8">
             <fieldset>
               <input type="text" name="lastname" id="name" value="" autocomplete="on" placeholder="Prénoms" required minlength="4" maxlength="25" pattern="^[A-zÀ-ÿ ]*$">
-              <div class="day">
-                <label for="friday">Vendredi</label>
-                <input type="checkbox" name="day[]" id="friday" value="Vendredi">
-              </div>
-              <div class="day">
-                <label for="saturday">Samedi</label>
-                <input type="checkbox" name="day[]" id="saturday" value="Samedi">
+              <div class="alldays">
+                <div class="day">
+                  <label for="friday">Vendredi</label>
+                  <input type="checkbox" name="day[]" id="friday" value="Vendredi">
+                </div>
+                <div class="day">
+                  <label for="saturday">Samedi</label>
+                  <input type="checkbox" name="day[]" id="saturday" value="Samedi">
+                </div>
               </div>
               <input type="hidden" name="token" value="<?php echo $token;?>"/>
               <input type="submit" name="submit" id="submit" value="J'y vais"/>

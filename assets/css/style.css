@@ -105,6 +105,13 @@ input[type=checkbox]:checked::before {
   color: #1abc9c;
 }
 
+.alldays {
+  display: -ms-flexbox;
+  display: flex;
+  -moz-column-gap: 0.3rem;
+       column-gap: 0.3rem;
+}
+
 .day {
   display: -ms-flexbox;
   display: flex;
@@ -120,16 +127,25 @@ form {
 form fieldset {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
+  padding: 0;
   border: none;
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  form fieldset {
+    -moz-column-gap: 0.3rem;
+         column-gap: 0.3rem;
+  }
 }
 @media (max-width: 599px) {
   form fieldset {
     -ms-flex-direction: column;
         flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center;
     row-gap: 0.5rem;
   }
 }
