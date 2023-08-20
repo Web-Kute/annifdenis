@@ -100,6 +100,7 @@ function cleanHex( $input){
     <meta name="description" content="Birthday">
     <meta name="author" content="Denis Godec">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="assets/css/normalize.css">
     <link
       rel="stylesheet"
       media="all"
@@ -138,7 +139,7 @@ function cleanHex( $input){
         </div>
         <div data-icon="plus" class="nav-item">
           <i data-icon="plus" class="icon fa fa-plus" aria-hidden="false"></i>
-          <div data-icon="plus" class="nav-item_text">Infos</div>
+          <div data-icon="plus" class="nav-item_text">Y penser</div>
         </div>
       </nav>
     </header>
