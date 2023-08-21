@@ -1,6 +1,5 @@
-@use 'variables';
-@use 'fonts';
-@use 'mixins';
+@use "variables";
+@use "mixins";
 
 html {
   scroll-behavior: smooth;
@@ -111,6 +110,10 @@ input[type="checkbox"] {
 .alldays {
   display: flex;
   column-gap: 0.3rem;
+  @include mixins.mobile-only() {
+    width: 90%;
+    justify-content: space-evenly;
+  }
 }
 
 .day {
@@ -128,15 +131,21 @@ form {
     display: flex;
     justify-content: center;
     column-gap: 1rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3%;
+    border: 1px solid map-get($map: variables.$colors, $key: "pomegranate");
+    border-radius: 5px;
     @include mixins.tablet-portrait-only() {
-      column-gap: 0.3rem;
+      column-gap: 1.5rem;
     }
-    padding: 0;
-    border: none;
     @include mixins.mobile-only() {
       flex-direction: column;
       align-items: center;
       row-gap: 0.5rem;
+      width: 90%;
+      padding: 5%;
     }
   }
   label {
@@ -146,8 +155,11 @@ form {
     height: 25px;
     outline: none;
     &:focus {
-      border: 2px solid map-get($map: variables.$colors, $key:"greensea");
+      border: 2px solid map-get($map: variables.$colors, $key: "greensea");
       @include mixins.color("black");
+    }
+    @include mixins.mobile-only() {
+      width: 70%;
     }
   }
 }
@@ -161,7 +173,7 @@ form {
   height: 32px;
   border-radius: 3px;
   @include mixins.mobile-only() {
-    width: 55%;
+    width: 70%;
   }
   &:hover {
     @include mixins.bgColor("greensea");
@@ -214,7 +226,7 @@ hr {
   height: 1px;
   background-color: transparent;
   border: none;
-  border-top: 1px solid map-get($map: variables.$colors, $key:"silver");
+  border-top: 1px solid map-get($map: variables.$colors, $key: "silver");
 }
 
 .red {
@@ -241,7 +253,7 @@ header {
 
 .birthday {
   @include mixins.color("clouds");
-  text-shadow: 1px 1px 1px map-get($map: variables.$colors, $key:"greensea");
+  text-shadow: 1px 1px 1px map-get($map: variables.$colors, $key: "greensea");
   padding: 0 2rem;
   border-radius: 10px;
 }
@@ -261,10 +273,10 @@ main {
   padding: 2rem;
   text-align: center;
   font-size: clamp(2rem, calc(1.3793rem + 2.7586vw), 5rem);
-  color: map-get($map: variables.$colors, $key:"white");
+  color: map-get($map: variables.$colors, $key: "white");
   @include mixins.bgColor("greensea");
   border-radius: 10px;
-  text-shadow: 1px 1px 1px map-get($map: variables.$colors, $key:"belizehole");
+  text-shadow: 1px 1px 1px map-get($map: variables.$colors, $key: "belizehole");
 }
 
 .container {
