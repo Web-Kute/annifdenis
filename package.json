@@ -9,10 +9,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "critical": "^5.1.1",
+    "gulp": "^4.0.2",
+    "sass": "^1.66.1"
   },
   "dependencies": {
-    "sass": "^1.66.0",
     "sass-autoprefixer": "^1.0.1"
   },
   "browserslist": [

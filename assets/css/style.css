@@ -23,6 +23,10 @@
   src: local("Roboto Regular"), local("Roboto-Regular"), url("../fonts/roboto/Roboto-Regular.ttf") format("TrueType");
   font-display: swap;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url("../img/bg-belle-ile.webp");
   background-repeat: no-repeat;
@@ -271,6 +275,7 @@ header {
   -ms-flex-align: center;
       align-items: center;
   row-gap: 2rem;
+  margin-top: 2rem;
   min-width: 270px;
 }
 

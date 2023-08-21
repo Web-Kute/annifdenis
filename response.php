@@ -12,6 +12,7 @@
     <meta name="description" content="Birthday">
     <meta name="author" content="Denis Godec">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="assets/css/normalize.css">
     <link
       rel="stylesheet"
       media="all"

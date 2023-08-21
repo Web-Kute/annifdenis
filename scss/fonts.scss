@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "PlayfairDisplay-Bold";
+  font-style: normal;
+  src: local("PlayfairDisplay Bold"), local("PlayfairDisplay-Bold"),
+    url("../fonts/playfair-display/PlayfairDisplay-Bold.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "PlayfairDisplay-Italic";
+  font-style: normal;
+  src: local("PlayfairDisplay Italic"), local("PlayfairDisplay-Italic"),
+    url("../fonts/playfair-display/PlayfairDisplay-Italic.otf")
+      format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "PlayfairDisplay-Regular";
+  font-style: normal;
+  src: local("PlayfairDisplay Regular"), local("PlayfairDisplay-Regular"),
+    url("../fonts/playfair-display/PlayfairDisplay-Regular.otf")
+      format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  font-style: normal;
+  src: local("Roboto Regular"), local("Roboto-Regular"),
+    url("../fonts/roboto/Roboto-Regular.ttf") format("TrueType");
+  font-display: swap;
+}

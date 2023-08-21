@@ -1,0 +1,23 @@
+$colors: (
+  "belizehole": #2980b9,
+  "greensea": #16a085,
+  "pomegranate": #c0392b,
+  "clouds": #ecf0f1,
+  "turquoise": #1abc9c,
+  "white": #ffffff,
+  "black": #000000,
+  "silver": #bdc3c7,
+);
+
+$duration: 300ms;
+
+$breakpoints: (
+  mobile-only: 599px,
+  tablet-portrait-up: 600px,
+  tablet-portrait-down: 899px,
+  tablet-landscape-up: 900px,
+  tablet-landscape-down: 1199px,
+  desktop-up: 1200px,
+  desktop-down: 1799px,
+  big-desktop-up: 1800px,
+);

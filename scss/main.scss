@@ -1,0 +1,461 @@
+@use 'variables';
+@use 'fonts';
+@use 'mixins';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url("../img/bg-belle-ile.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: "PlayfairDisplay-Regular", serif;
+  @include mixins.bgColor("greensea");
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.5rem, -1.7338rem + 8.6379vw, 3.125rem);
+}
+
+h2 {
+  font-size: 2rem;
+  @include mixins.color("pomegranate");
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "\2022";
+  @include mixins.color("pomegranate");
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+ol {
+  counter-reset: item;
+}
+ol li {
+  display: block;
+}
+ol li:before {
+  content: counter(item) ". ";
+  font-weight: bold;
+  counter-increment: item;
+  @include mixins.color("pomegranate");
+}
+
+.info-pic {
+  height: 100%;
+  max-width: 650px;
+  object-fit: cover;
+}
+
+// Reset original HTML button
+button,
+#submit {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  accent-color: map-get($map: variables.$colors, $key: "pomegranate");
+  width: 22px;
+  height: 22px;
+  border: 1px solid map-get($map: variables.$colors, $key: "greensea");
+  border-radius: 2px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  @include mixins.bgColor("white");
+  position: relative;
+  &:checked::before {
+    content: "\2713";
+    font-size: 16px;
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    @-moz-document url-prefix() {
+      top: -1px;
+      left: 2px;
+    }
+    @include mixins.color("turquoise");
+  }
+}
+
+.alldays {
+  display: flex;
+  column-gap: 0.3rem;
+}
+
+.day {
+  display: flex;
+  align-items: center;
+  column-gap: 2px;
+  @include mixins.mobile-only() {
+    font-size: 0.8rem;
+  }
+}
+
+form {
+  margin: 2rem 0;
+  fieldset {
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+    @include mixins.tablet-portrait-only() {
+      column-gap: 0.3rem;
+    }
+    padding: 0;
+    border: none;
+    @include mixins.mobile-only() {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 0.5rem;
+    }
+  }
+  label {
+    cursor: pointer;
+  }
+  input[type="text"] {
+    height: 25px;
+    outline: none;
+    &:focus {
+      border: 2px solid map-get($map: variables.$colors, $key:"greensea");
+      @include mixins.color("black");
+    }
+  }
+}
+
+#submit {
+  @include mixins.bgColor("belizehole");
+  @include mixins.color("white");
+  font-size: 1rem;
+  padding: 7px 30px;
+  width: 160px;
+  height: 32px;
+  border-radius: 3px;
+  @include mixins.mobile-only() {
+    width: 55%;
+  }
+  &:hover {
+    @include mixins.bgColor("greensea");
+  }
+}
+
+.response {
+  margin: 5rem 0 1rem;
+  @include mixins.color("white");
+}
+
+.header-response {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .btn-back {
+    font-size: clamp(1.5rem, 1.1053rem + 1.2632vw, 3rem);
+    @include mixins.color("white");
+    transition-duration: variables.$duration;
+    &:hover {
+      @include mixins.color("pomegranate");
+    }
+  }
+  .fa-arrow-left {
+    font-size: clamp(1.5rem, 1.1053rem + 1.2632vw, 3rem);
+    @include mixins.color("pomegranate");
+    margin-right: 1rem;
+  }
+}
+
+p {
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+
+a {
+  outline: 0;
+  @include mixins.color("greensea");
+  &:hover,
+  &:focus-visible {
+    @include mixins.color("pomegranate");
+  }
+  &:focus-visible {
+    outline: 2px dotted map-get($map: variables.$colors, $key: "black");
+    outline-offset: 3px;
+  }
+}
+
+hr {
+  height: 1px;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid map-get($map: variables.$colors, $key:"silver");
+}
+
+.red {
+  @include mixins.color("pomegranate");
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+  margin-top: 2rem;
+  min-width: 270px;
+}
+
+.birth-title {
+  display: flex;
+  justify-content: center;
+  @include mixins.mobile-only() {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.birthday {
+  @include mixins.color("clouds");
+  text-shadow: 1px 1px 1px map-get($map: variables.$colors, $key:"greensea");
+  padding: 0 2rem;
+  border-radius: 10px;
+}
+
+main {
+  height: 100vh;
+}
+
+#display-countdown {
+  top: var(--offset-content);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 165px;
+  width: 50%;
+  margin: 0 auto 1rem;
+  padding: 2rem;
+  text-align: center;
+  font-size: clamp(2rem, calc(1.3793rem + 2.7586vw), 5rem);
+  color: map-get($map: variables.$colors, $key:"white");
+  @include mixins.bgColor("greensea");
+  border-radius: 10px;
+  text-shadow: 1px 1px 1px map-get($map: variables.$colors, $key:"belizehole");
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  width: 85%;
+  @include mixins.mobile-only() {
+    width: 98%;
+    margin: 5% auto;
+  }
+  @include mixins.tablet-portrait-up() {
+    padding: 3%;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  @include mixins.mobile-only() {
+    width: 100%;
+  }
+
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+    .icon {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include mixins.sizeCircle(70px);
+      cursor: pointer;
+      @include mixins.bgColor("white");
+      @include mixins.color("greensea");
+      font-size: clamp(1.5rem, 1.4059rem + 0.396vw, 2rem);
+      transition-duration: variables.$duration;
+      &.active {
+        @include mixins.color("pomegranate");
+      }
+      @include mixins.mobile-only {
+        @include mixins.sizeCircle(50px);
+      }
+    }
+
+    &:hover .icon {
+      @include mixins.color("pomegranate");
+    }
+
+    &:hover .nav-item_text {
+      @include mixins.color("pomegranate");
+    }
+
+    &_text {
+      font-family: "Roboto-Regular", sans-serif;
+      font-size: clamp(1rem, 0.6674rem + 0.8884vw, 2rem);
+      color: map-get($map: variables.$colors, $key: "white");
+      transition-duration: variables.$duration;
+      &.active {
+        @include mixins.color("pomegranate");
+      }
+    }
+  }
+}
+
+.content {
+  position: absolute;
+  width: 90%;
+  min-width: 270px;
+  min-height: 500px;
+  border-radius: 5px;
+  padding: 5%;
+  margin-bottom: 20px;
+  @include mixins.bgColor("white");
+  figure {
+    margin: 0 1rem 10px 0;
+    float: left;
+    img {
+      border-radius: 5px;
+    }
+    @include mixins.tablet-portrait-down() {
+      margin: 0;
+      float: none;
+    }
+  }
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  &:nth-child(1) {
+    margin-bottom: 1rem;
+  }
+  .fa-xmark {
+    font-size: 2rem;
+    height: 30px;
+    @include mixins.color("turquoise");
+    cursor: pointer;
+    transition-duration: variables.$duration;
+    transform-origin: center;
+    @include mixins.mobile-only() {
+      font-size: 1.5rem;
+    }
+    &:hover {
+      @include mixins.color("pomegranate");
+      transform: rotate(225deg);
+    }
+  }
+}
+
+blockquote {
+  display: flow-root;
+  font-size: clamp(1.1rem, 1.0718rem + 0.1188vw, 1.25rem);
+  @include mixins.bgColor("clouds");
+  min-width: 190px;
+  border-left: 10px solid map-get($map: variables.$colors, $key: "silver");
+  margin: 0 10px;
+  padding: 0.5rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  // quotes: "\201C""\201D""\2018""\2019";
+  @include mixins.mobile-only() {
+    border-left: 6px solid map-get($map: variables.$colors, $key: "silver");
+    margin: 1.2em 0;
+  }
+}
+
+.hide {
+  visibility: hidden;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.show {
+  visibility: visible;
+}
+
+.fa-quote-left {
+  font-size: 2rem;
+  @include mixins.color("greensea");
+  margin-right: 10px;
+}
+
+table {
+  table-layout: fixed;
+  width: 33%;
+  @include mixins.mobile-only() {
+    width: 100%;
+  }
+  thead th {
+    @include mixins.bgColor("greensea");
+    @include mixins.color("white");
+    padding: 5px;
+  }
+  tr:nth-child(1) td {
+    border-bottom: 1px solid map-get($map: variables.$colors, $key: "turquoise");
+  }
+  td + td {
+    border-left: 1px solid map-get($map: variables.$colors, $key: "turquoise");
+  }
+  td {
+    text-align: center;
+  }
+}
+table + p {
+  font-size: 0.8rem;
+}
+
+// Animation
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadein {
+  animation: fadeIn variables.$duration ease-out;
+}
