@@ -6,6 +6,7 @@
 .fa {
   font-family: var(--fa-style-family, "Font Awesome 6 Free");
   font-weight: var(--fa-style, 900);
+  font-display: swap;
 }
 
 .fa,
@@ -32,6 +33,7 @@
 .far,
 .fa-regular {
   font-family: "Font Awesome 6 Free";
+  font-display: swap;
 }
 
 .fab,
